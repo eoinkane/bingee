@@ -1,4 +1,4 @@
-#### Create React App auto readme section
+# Create React App auto readme section
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
