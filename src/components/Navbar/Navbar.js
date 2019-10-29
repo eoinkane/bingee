@@ -6,15 +6,15 @@ function NavbarLocalFull() {
                 <h5 className="navBarH5">Bingee!</h5>
                 <div className="row" >
                     <div className="col-sm-2 navBarBtnRow">
-                        <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn" id="homeBtn" type="button">
+                        <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn disabled" id="homeBtn" type="button">
                             Home
                             <i className="fas fa-home homeIcon"></i>
                         </button>
                         <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn disabled" type="button">Options</button>
-                        <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn" id="backBtn" type="button">
+                        <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn disabled" id="backBtn" type="button">
                             <i className="fas fa-arrow-circle-left"></i>
                         </button>
-                        <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn" id="upBtn" type="button">
+                        <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn disabled" id="upBtn" type="button">
                             <i className="fas fa-arrow-circle-up"></i>
                         </button>
 
