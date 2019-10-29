@@ -1,3 +1,11 @@
+# Bingee! Section
+
+Bingee!
+React-based TV companion
+Due to still being in development our database of shows is limited but progress is being made
+
+
+
 # Create React App auto readme section
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
