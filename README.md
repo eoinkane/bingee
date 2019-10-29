@@ -2,7 +2,8 @@
 
 Bingee!
 React-based TV companion
-Due to still being in development our database of shows is limited but progress is being made
+Due to still being in development our range of shows is limited but progress is being made
+Api integration in being built
 
 
 
