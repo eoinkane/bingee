@@ -1,5 +1,5 @@
 import React from 'react';
-function NavbarLocalFull(props) {
+function NavbarLocalFull() {
     return (
         <nav className="navbar navbar-light bg-light">
             <form className="form-inline">
@@ -24,7 +24,7 @@ function NavbarLocalFull(props) {
         </nav>
     )
 }
-function NavbarLocalSmall(props) {
+function NavbarLocalSmall() {
     return (
         
         <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn" id="downBtn" type="button">
