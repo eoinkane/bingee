@@ -1,22 +1,186 @@
-.App {
-  text-align: center;
+/* icons css */
+/* start */
+.homeIcon{
+  padding-left: 6px;
+}
+/* end */
+
+/* NAVBAR css */
+/* start */
+.navBarBtn {
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+}
+.navBarBtnRow {
+  padding-left: 24px;
+  padding-right: 12px;
+}
+.navBarH5 {
+  padding-top: 7px;
+  text-shadow: 4px 4px 10px #89b34a;
+}
+/* end  */
+
+/* Text sizes*/
+/* start */
+.jumboTextMid{
+  font-size: 14px;
+}
+.jumboTextSm{
+  font-size: 12.3px;
+}
+.jumboTextXs {
+  font-size: 10px;  
+}
+.pNotEndOfList {
+  margin-bottom: 0px;
+}
+.topPrint{
+  padding-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
+
+
+/* end */
+
+/* main global values */
+/* start */
+.pageCont{
+  padding-top: 10px;
+  height: 437px;
+}
+/* end */
+
+/* jumbo container */
+
+  /* jumbo container for under navbar */
+  /* start */
+#jumbomainfalse{
+  height: 437px;
+}
+  /* end */
+
+  /* jumbo container for under navbar */
+  /* start */
+#jumbomaintrue{
+  height: 500px;
+  padding: 0.5rem 0.25rem;
+}
+  /* end */
+
+  /* jumbo container for without navbar */
+  /* start  */
+#jumbomainfalse{
+  height: 437px;
+}
+/* put the navbar back down button on the same row as h4 */
+#btnRightCornerDiv{
+  width: 61px;
+}
+#downBtn{
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 8.5px;
+}
+#h5Div{
+  width: 271px;
+  padding-right: 0px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* end  */
+
+
+/* for both variations of navbar */
+
+/* jumbo rows */
+/* default row */
+.jumboContRow {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/*  col sizes similar to bootstrap need to be used in rows out of 12 max */
+.jumboContRowCol2 {
+  width: 16.6%;
 }
 
-.App-link {
-  color: #09d3ac;
+.jumboContRowCol4 {
+  width: 33.3%;
 }
+
+.jumboContRowCol6 {
+  width: 50%;
+}
+
+.jumboContRowCol8 {
+  width: 66.6%;
+}
+
+.jumboContRowCol10 {
+  width: 83.3%;
+}
+
+.jumboContRowCol12 {
+  width: 100%;
+}
+
+/* still rows but more apperance and position */
+
+/*  green divider */
+.greenRowSeparator {
+  /* 
+  border-style: solid;
+  border-color: #2196F3;
+  border: 5px;
+  */
+
+  border-style: solid;
+  border-color: #28a745;
+}
+
+/* bottom row */
+.bottomRow{
+  position: absolute;
+  bottom: 0px;
+}
+
+/* Get Started Buttons */
+i.fas.fa-tv {
+  padding-right: 10px;
+}
+
+
+/* end */
+
+/* start component */
+/* start */
+
+#selectormainfalse{
+  height: 437px;
+  padding: 0.5rem 0.25rem;
+  background-color: #e9ecef;
+}
+
+#selectormaintrue{
+  background-color: #e9ecef;
+  padding-top: 10px;
+  height: 500px;
+}
+
+/* end */
+
+/* chosen component */
+/* start */
+#chosenmainfalse{
+  height: 437px;
+  padding: 0.5rem 0.25rem;
+  background-color: #e9ecef;
+}
+
+#chosenmaintrue{
+  background-color: #e9ecef;
+  padding-top: 10px;
+  height: 500px;
+}
+/* end */
