@@ -6,12 +6,12 @@ const Selector =((props) => {
             <div className="selector">
                 <div className="container row jumboContRow">
                     <div className="col-xs-10 jumboContRowCol10">
-                        <h6 className="lead pNotEndOfList">Select the </h6>
+                        <h6 className="lead pNotEndOfList">Select the {props.level}</h6>
                     </div>
                 </div>
                 <div className="container row jumboContRow">
                     <div className="col-xs-12 jumboContRowCol12">
-                        <select id="selector" className="custom-select">
+                        <select id="selector" className="custom-select" defaultValue={'DEFAULT'}>
                             {props.opts}
                     </select>
                     </div>

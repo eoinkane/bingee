@@ -19,23 +19,25 @@ function Opt(props) {
 class Start extends Component {
     // Handlers 
     selectBtnHandler = () => {
-        alert("Line 10");
-        if (this.props.props.levelInt === 0) {
-            let valueResponse = document.querySelector("#selector").value;
-            let valueResponseArray = valueResponse.split("=")
-            this.props.handlers.setSelectedSeriesHandler(this.props.props.tvList[valueResponseArray[1]])
-            this.props.handlers.increaseLevelHandler()
-        } else if (this.props.props.levelInt === 1) {
-            let valueResponse = document.querySelector("#selector").value;
-            let valueResponseArray = valueResponse.split("=")
-            this.props.handlers.setSelectedSeasonHandler(this.props.props.selectedSeries.seasons[valueResponseArray[1]])
-            this.props.handlers.increaseLevelHandler()
-        } else if (this.props.props.levelInt === 2) {
-            let valueResponse = document.querySelector("#selector").value;
-            let valueResponseArray = valueResponse.split("=")
-            this.props.handlers.changePositionHandler("Home");
-            this.props.handlers.setSelectedEpisodeHandler(this.props.props.selectedSeason.episodes[valueResponseArray[1]])
+        if (document.querySelector("#selector").value !== "DEFAULT") {
+            if (this.props.props.levelInt === 0) {
+                let valueResponse = document.querySelector("#selector").value;
+                let valueResponseArray = valueResponse.split("=")
+                this.props.handlers.setSelectedSeriesHandler(this.props.props.tvList[valueResponseArray[1]])
+                this.props.handlers.increaseLevelHandler()
+            } else if (this.props.props.levelInt === 1) {
+                let valueResponse = document.querySelector("#selector").value;
+                let valueResponseArray = valueResponse.split("=")
+                this.props.handlers.setSelectedSeasonHandler(this.props.props.selectedSeries.seasons[valueResponseArray[1]])
+                this.props.handlers.increaseLevelHandler()
+            } else if (this.props.props.levelInt === 2) {
+                let valueResponse = document.querySelector("#selector").value;
+                let valueResponseArray = valueResponse.split("=")
+                this.props.handlers.changePositionHandler("Home");
+                this.props.handlers.setSelectedEpisodeHandler(this.props.props.selectedSeason.episodes[valueResponseArray[1]])
+            }
         }
+        
         //this.props.handlers.increaseLevelHandler()
     }
 
@@ -93,15 +95,15 @@ class Start extends Component {
     generateOptionListSeries = ((optionListLocal) => {
         for (let i = 0; i < this.props.props.tvList.length; i++) {
             optionListLocal.push(
-                <Opt string={"Series=" + i} value={this.props.props.tvList[i].title} id={i} key={i}/>
-            )
+                <Opt string={"Series=" + i} value={this.props.props.tvList[i].title} id={i} key={i} />
+            )            
         }
     })
     generateOptionListSeason = ((optionListLocal) => {
         for (let i = 0; i < this.props.props.selectedSeries.seasons.length; i++) {
             optionListLocal.push(
                 <Opt string={"Season=" + i} value={this.props.props.selectedSeries.seasons[i].season} id={i} key={i} />
-            )
+            )            
         }
     })
     generateOptionListEpisode = ((optionListLocal) => {
@@ -114,6 +116,9 @@ class Start extends Component {
     
     generateOptionList = ((level) => {
         let optionListLocal = [];
+        optionListLocal.push(
+            <option value="DEFAULT" key={"DEFAULT"} >Choose a {this.props.props.level} </option>
+        );
         if (level === "series") {
             this.generateOptionListSeries(optionListLocal);
         } else if (level === "season") {

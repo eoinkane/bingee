@@ -17,7 +17,7 @@ const apiKey = "beb6f97f52b6ea6335066bfacd31c74c";
 const apiEnd = `?api_key=${apiKey}&language=en-US`;
 let apiTvUrl = "https://api.themoviedb.org/3/tv/";
 
-let tvList = Array(3);
+let tvList = Array(7);
 
 class series {
   constructor(response, seasons) {
@@ -138,6 +138,10 @@ class App extends Component {
     dataRun(66788, 0);
     dataRun(48891, 1);
     dataRun(67136, 2);
+    dataRun(71446, 3);
+    dataRun(66857, 4);
+    dataRun(67026, 5);
+    dataRun(68006, 6);
 
 
     let localList = tvList;
