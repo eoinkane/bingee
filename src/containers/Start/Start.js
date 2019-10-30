@@ -33,8 +33,8 @@ class Start extends Component {
             } else if (this.props.props.levelInt === 2) {
                 let valueResponse = document.querySelector("#selector").value;
                 let valueResponseArray = valueResponse.split("=")
-                this.props.handlers.changePositionHandler("Home");
                 this.props.handlers.setSelectedEpisodeHandler(this.props.props.selectedSeason.episodes[valueResponseArray[1]])
+                this.props.handlers.changePositionHandler("Chosen");
             }
         }
         

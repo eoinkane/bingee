@@ -6,6 +6,8 @@ import './App.css';
 // Containers
 import Home from "./containers/Home/Home";
 import Start from  "./containers/Start/Start";
+import Chosen from  "./containers/Chosen/Chosen";
+
 
 
 // Components
@@ -113,7 +115,8 @@ class App extends Component {
     position: "Home",
     positions: [
       "Home",
-      "Start"
+      "Start",
+      "Chosen"
     ],
     navbarDown: true,
     tvListLength: tvList.length,
@@ -212,6 +215,10 @@ class App extends Component {
     } else if (this.state.position === this.state.positions[1]) {
       return (
         <Start props={this.state} handlers={this.handlers}/>
+      )
+    } else if (this.state.position === this.state.positions[2]) {
+      return (
+        <Chosen props={this.state} handlers={this.handlers} />
       )
     }
   }

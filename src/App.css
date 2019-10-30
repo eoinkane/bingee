@@ -183,4 +183,23 @@ i.fas.fa-tv {
   padding-top: 10px;
   height: 500px;
 }
+
+#scrollBtnRow{
+  padding-top: 20px;
+}
+
+#leftScrollCol{
+  position: initial;
+}
+
+#rightScrollCol{
+  position: initial;
+}
+
+#nextBtn{
+  position: relative;
+  left: 93.8px;
+}
+
+
 /* end */
