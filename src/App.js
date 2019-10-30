@@ -5,6 +5,7 @@ import './App.css';
 
 // Containers
 import Home from "./containers/Home/Home";
+import Start from  "./containers/Start/Start";
 
 
 // Components
@@ -16,7 +17,7 @@ const apiKey = "beb6f97f52b6ea6335066bfacd31c74c";
 const apiEnd = `?api_key=${apiKey}&language=en-US`;
 let apiTvUrl = "https://api.themoviedb.org/3/tv/";
 
-let tvList = [];
+let tvList = Array(3);
 
 class series {
   constructor(response, seasons) {
@@ -33,6 +34,7 @@ class season {
   constructor(response, name, duration, episodes) {
     this.number = response.season_number;
     this.season = (name + " " + response.name);
+    this.name = response.name;
     this.series = name;
     this.numberOfEpisodes = response.episodes.length;
     this.episodes = episodes;
@@ -53,7 +55,7 @@ class episode {
 
 // data section 
 // main
-async function dataRun(tvKey) {
+async function dataRun(tvKey, index) {
   let tvDataRun = [];
   let seasonsDataRun = [];
 
@@ -84,7 +86,7 @@ async function dataRun(tvKey) {
     localSeriesObjList.push(newSeriesObj);
   }
 
-  tvList.push(localSeriesObjList[0]);
+  tvList[index] = localSeriesObjList[0];
 }
 
 
@@ -110,30 +112,91 @@ class App extends Component {
   state = {
     position: "Home",
     positions: [
-      "Home"
+      "Home",
+      "Start"
     ],
     navbarDown: true,
-    tvList: tvList
+    tvListLength: tvList.length,
+    tvList: tvList,
+    level: "series",
+    levelInt: 0,
+    levels: [
+      "series",
+      "season",
+      "episode"
+    ],
+    selectedSeries: undefined,
+    selectedSeason: undefined,
+    selectedEpisode: undefined,
   }
 
   // Lifecycle  
   componentDidMount() {
-    console.log("[App.js] componentDidMount");
-    dataRun(66788);
-    dataRun(48891);
-    console.log(this.state.tvList);
+    //console.log("[App.js] componentDidMount");
+
+
+    dataRun(66788, 0);
+    dataRun(48891, 1);
+    dataRun(67136, 2);
+
+
+    let localList = tvList;
+    this.setState({
+      tvListLength: localList.length,
+      tvList: localList
+    })
   }
 
   
   // Handlers 
   changePositionHandler = (destination) => {
+    if (destination === "Home") {
+      let newLevelInt = 0;
+      this.setState({
+        levelInt: newLevelInt,
+        level: this.state.levels[newLevelInt]
+      })
+    }
     this.setState({
       position: destination
     })
   }
+  increaseLevelHandler = () => {
+    // console.log(this.state.levelInt);
+    /*
+    if ((this.state.levelInt) < this.state.levels.length) {
+      console.log("== -- Line 167 -- ==");
+    }
+    */
+    let newLevelInt = this.state.levelInt + 1;
+    this.setState({
+      levelInt: newLevelInt,
+      level: this.state.levels[newLevelInt]
+    })
+  }
+
+  setSelectedSeriesHandler = ((obj) => {
+    this.setState({
+      selectedSeries: obj
+    })
+  })
+  setSelectedSeasonHandler = ((obj) => {
+    this.setState({
+      selectedSeason: obj
+    })
+  })
+  setSelectedEpisodeHandler = ((obj) => {
+    this.setState({
+      selectedEpisode: obj
+    })
+  })
 
   handlers = {
-    changePositionHandler: this.changePositionHandler
+    changePositionHandler: this.changePositionHandler,
+    increaseLevelHandler: this.increaseLevelHandler,
+    setSelectedSeriesHandler: this.setSelectedSeriesHandler,
+    setSelectedSeasonHandler: this.setSelectedSeasonHandler,
+    setSelectedEpisodeHandler: this.setSelectedEpisodeHandler
   }
   
 
@@ -142,7 +205,11 @@ class App extends Component {
       return (
         <Home props={this.state} handlers={this.handlers}/>
       )
-    } 
+    } else if (this.state.position === this.state.positions[1]) {
+      return (
+        <Start props={this.state} handlers={this.handlers}/>
+      )
+    }
   }
 
 }

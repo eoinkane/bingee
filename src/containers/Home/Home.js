@@ -8,17 +8,16 @@ class Home extends Component {
 
     // Handlers 
     getStartedBtnHandler = () => {
-        alert("Line 11");
-        this.props.handlers.changePositionHandler("Home")
+        this.props.handlers.changePositionHandler("Start")
     }
 
     addEventListenersHandler = () => {
-        console.log("[Home.js] addEventListenersHandler");
+        //console.log("[Home.js] addEventListenersHandler");
         document.querySelector("#getStartedBtn").addEventListener("click", this.getStartedBtnHandler);
     }
 
     removeEventListenersHandler = () => {
-        console.log("[Home.js] removeEventListenersHandler");
+        //console.log("[Home.js] removeEventListenersHandler");
         document.querySelector("#getStartedBtn").removeEventListener("click", this.getStartedBtnHandler);
     }
 
@@ -30,12 +29,12 @@ class Home extends Component {
     // Lifecycle
 
     componentDidMount() {
-        console.log("[Home.js] componentDidMount");
+        // console.log("[Home.js] componentDidMount");
         this.handlers.addEventListenersHandler();
     }
     
     componentDidUpdate() {
-        console.log("[Home.js] componentDidUpdate");
+        //console.log("[Home.js] componentDidUpdate");
         this.handlers.removeEventListenersHandler();
         this.handlers.addEventListenersHandler();
     }
@@ -45,7 +44,7 @@ class Home extends Component {
     render() {
         return (
             <div className="HomeDiv">
-                <Navbar full={this.props.props.navbarDown} />
+                <Navbar full={this.props.props.navbarDown} handlers={this.props.handlers}/>
                 <WelcomeJumbo fullQ="false" />
             </div>
         )
