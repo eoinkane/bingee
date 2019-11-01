@@ -28,14 +28,15 @@ class Start extends Component {
             } else if (this.props.props.levelInt === 1) {
                 let valueResponse = document.querySelector("#selector").value;
                 let valueResponseArray = valueResponse.split("=")
-                this.props.handlers.setSelectedSeasonHandler(this.props.props.selectedSeries.seasons[valueResponseArray[1]])
+                this.props.handlers.setSelectedSeasonHandler(this.props.props.selectedSeries.seasons[valueResponseArray[1]], this.props.props.selectedSeries);
                 this.props.handlers.increaseLevelHandler()
             } else if (this.props.props.levelInt === 2) {
                 let valueResponse = document.querySelector("#selector").value;
                 let valueResponseArray = valueResponse.split("=")
-                this.props.handlers.setSelectedEpisodeHandler(this.props.props.selectedSeason.episodes[valueResponseArray[1]])
+                this.props.handlers.setSelectedEpisodeHandler(this.props.props.selectedSeason.episodes[valueResponseArray[1]],this.props.props.selectedSeason)
                 this.props.handlers.changePositionHandler("Chosen");
             }
+            this.props.handlers.changePrevBtnClickedKeyHandler("selectBtn");
         }
         
         //this.props.handlers.increaseLevelHandler()
@@ -136,7 +137,7 @@ class Start extends Component {
     render() {
         optionList = this.generateOptionList(this.props.props.level);
         return (
-            <div className="StartDiv"> {/*id="selectormaintrue"*/}
+            <div className="StartDiv BigDiv"> {/*id="selectormaintrue"*/}
                 <Navbar full={this.props.props.navbarDown} handlers={this.props.handlers}/>
                 <Selector tvList={this.props.props.tvList} level={this.props.props.level} handlers={this.props.handlers} opts={optionList}/>
             </div>

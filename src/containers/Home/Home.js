@@ -8,7 +8,8 @@ class Home extends Component {
 
     // Handlers 
     getStartedBtnHandler = () => {
-        this.props.handlers.changePositionHandler("Start")
+        this.props.handlers.changePositionHandler("Start");
+        this.props.handlers.changePrevBtnClickedKeyHandler("getStartedBtn");
     }
 
     addEventListenersHandler = () => {
@@ -43,7 +44,7 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="HomeDiv">
+            <div className="HomeDiv BigDiv">
                 <Navbar full={this.props.props.navbarDown} handlers={this.props.handlers}/>
                 <WelcomeJumbo fullQ="false" />
             </div>

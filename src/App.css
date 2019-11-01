@@ -11,13 +11,23 @@
   margin-left: 2.5px;
   margin-right: 2.5px;
 }
-.navBarBtnRow {
-  padding-left: 24px;
-  padding-right: 12px;
+
+#navbarToggleExternalContent{
+  padding-left: 8vw;
 }
+
 .navBarH5 {
   padding-top: 7px;
   text-shadow: 4px 4px 10px #89b34a;
+  padding-right: 20px;
+}
+
+.navBarLocal {
+  text-align: center;
+}
+
+.formLocal {
+  margin: auto;
 }
 /* end  */
 
@@ -45,9 +55,13 @@
 
 /* main global values */
 /* start */
-.pageCont{
-  padding-top: 10px;
-  height: 437px;
+.BigDiv {
+  background-color: #e9ecef;
+  min-height: 100vh;
+  min-width: 100vw;
+
+  overflow: scroll;
+
 }
 /* end */
 
@@ -55,24 +69,17 @@
 
   /* jumbo container for under navbar */
   /* start */
-#jumbomainfalse{
-  height: 437px;
-}
+
   /* end */
 
   /* jumbo container for under navbar */
   /* start */
-#jumbomaintrue{
-  height: 500px;
-  padding: 0.5rem 0.25rem;
-}
+
   /* end */
 
   /* jumbo container for without navbar */
   /* start  */
-#jumbomainfalse{
-  height: 437px;
-}
+
 /* put the navbar back down button on the same row as h4 */
 #btnRightCornerDiv{
   width: 61px;
@@ -85,6 +92,12 @@
 #h5Div{
   width: 271px;
   padding-right: 0px;
+}
+
+.navBarRow {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
 }
 
   /* end  */
@@ -142,7 +155,7 @@
 /* bottom row */
 .bottomRow{
   position: absolute;
-  bottom: 0px;
+  bottom: 15px;
 }
 
 /* Get Started Buttons */
@@ -162,20 +175,19 @@ i.fas.fa-tv {
   background-color: #e9ecef;
 }
 
-#selectormaintrue{
-  background-color: #e9ecef;
-  padding-top: 10px;
-  height: 500px;
-}
 
 /* end */
 
 /* chosen component */
 /* start */
-#chosenmainfalse{
-  height: 437px;
-  padding: 0.5rem 0.25rem;
-  background-color: #e9ecef;
+
+.ChosenDiv {
+  /* position: initial; */
+}
+#displayOverview {
+  min-height: initial;
+  max-height: 27vh;
+  overflow: scroll;
 }
 
 #chosenmaintrue{
@@ -185,7 +197,7 @@ i.fas.fa-tv {
 }
 
 #scrollBtnRow{
-  padding-top: 20px;
+  padding-top: 13px;
 }
 
 #leftScrollCol{
@@ -197,9 +209,11 @@ i.fas.fa-tv {
 }
 
 #nextBtn{
-  position: relative;
-  left: 93.8px;
+  width: 88.7px;
+  float: right;
 }
+
+
 
 
 /* end */

@@ -11,9 +11,9 @@ function JumboMainLocal() {
             </div>
             <div className="row jumboContRow">
                 <div className="col-xs-12 jumboContRowCol12">
-                    <p className="lead jumboTextSm pNotEndOfList">Bingee! stores information on TV shows at various levels.</p>
-                    <p className="lead jumboTextSm pNotEndOfList">If you can't remember what episode comes next, use Bingee! to find out</p>
-                    <p className="lead jumboTextSm">Find out what episodes are part of your series and use our episode counter*.</p>
+                    <p className="lead jumboTextSm pNotEndOfList">Description blah blah blah, need to build app first, Have a couple of rows containing a welcome message </p>
+                    <p className="lead jumboTextSm pNotEndOfList">Hello, This is app, if use app, welcome message, reformat to describe features</p>
+                    <p className="lead jumboTextSm">Brand new feature that only is not existent*.</p>
                 </div>
             </div>
 
@@ -44,7 +44,7 @@ function JumboMainLocal() {
 
             <div className="row jumboContRow bottomRow">
                 <div className="col-xs-12 jumboContRowCol12">
-                    <p className="lead jumboTextXs pNotEndOfList">*Episode Counter coming soon</p>
+                    <p className="lead jumboTextXs pNotEndOfList">*New feature coming soon</p>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@ function WelcomeJumbo(props) {
                 <div className="container jumboCont">
                     <div className="row">                        
                         <div className="col-sm-4 jumboNavBar" id="h5Div">
-                            <h5 className="">Bingee!<br></br> React-based TV companion</h5>
+                            <h5 className="">Bingee!<br></br> React-based TV app</h5>
                         </div>
                         <div className="col-sm-4 jumboNavBar" id="btnRightCornerDiv">
                             <button className="btn btn-outline-success btn-sm my-2 my-sm-0 navBarBtn" id="downBtn" type="button">
@@ -84,7 +84,7 @@ function WelcomeJumbo(props) {
                 <div className="container jumboCont">
                     <div className="row">
                         <div className="col-sm-4 jumboNavBar">
-                            <h5 className="">Bingee!<br></br> React-based TV companion</h5>
+                            <h5 className="">Bingee!<br></br> React-based TV app</h5>
                         </div>
                     </div>
                 </div>
