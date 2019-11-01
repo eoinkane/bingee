@@ -204,6 +204,10 @@ i.fas.fa-tv {
   position: initial;
 }
 
+#midScrollCol {
+    padding-left: 7vw;
+}
+
 #rightScrollCol{
   position: initial;
 }
@@ -213,6 +217,13 @@ i.fas.fa-tv {
   float: right;
 }
 
+.seasonIMG{
+  padding: 2vw;
+}
+
+#seasonImgBtn {  
+  float: right;
+}
 
 
 
