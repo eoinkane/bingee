@@ -19,6 +19,8 @@ const apiKey = "beb6f97f52b6ea6335066bfacd31c74c";
 const apiEnd = `?api_key=${apiKey}&language=en-US`;
 let apiTvUrl = "https://api.themoviedb.org/3/tv/";
 
+let apiImgUrl = "https://image.tmdb.org/t/p/";
+
 let tvListKeys = [
   66788,
   48891,
@@ -61,6 +63,9 @@ class season {
     this.numberOfEpisodes = response.episodes.length;
     this.episodes = episodes;
     this.duration = this.numberOfEpisodes * duration;
+    this.airDate = response.air_date;
+    this.imagePath = response.poster_path;
+    this.overview = response.overview;
   }
 }
 
@@ -111,12 +116,12 @@ async function dataRun(tvKey, index) {
     localSeriesObjList.push(newSeriesObj);
   }
 
-  /* // testing if // if needed to check a response of certain series
-  if (index === /series index\) {
+  ///* // testing if // if needed to check a response of certain series
+  if (index === 9) {
     console.log(tvDataRun);
     console.log(seasonsDataRun);
   }
-  */
+  //*/
   tvList[index] = localSeriesObjList[0];
 }
 
@@ -171,7 +176,10 @@ class App extends Component {
     selectedEpisodePrev: undefined,
     selectedEpisode: undefined,
     selectedEpisodeNext: undefined,
-    prevBtnClicked: "homeBtn"
+    prevBtnClicked: "homeBtn",
+    api: {
+      apiImgUrl: apiImgUrl
+    }
   }
 
   // Lifecycle  
