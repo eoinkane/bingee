@@ -8,8 +8,10 @@ class Home extends Component {
 
     // Handlers 
     getStartedBtnHandler = () => {
-        this.props.handlers.changePositionHandler("Start");
-        this.props.handlers.changePrevBtnClickedKeyHandler("getStartedBtn");
+        if (this.props.props.dataLoaded) {
+            this.props.handlers.changePositionHandler("Start");
+            this.props.handlers.changePrevBtnClickedKeyHandler("getStartedBtn");
+        }        
     }
 
     addEventListenersHandler = () => {
