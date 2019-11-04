@@ -129,12 +129,12 @@ async function dataRun(tvKey, index) {
     localSeriesObjList.push(newSeriesObj);
   }
 
-  ///* // testing if // if needed to check a response of certain series
-  if (index === 9) {
+  /* // testing if // if needed to check a response of certain series
+  if (index === /\test index/\) {
     console.log(tvDataRun);
     console.log(seasonsDataRun);
   }
-  //*/
+  */
   tvList[index] = localSeriesObjList[0];
 }
 
@@ -175,6 +175,7 @@ class App extends Component {
       "Chosen"
     ],
     navbarDown: true,
+    dataLoaded: false,
     tvListLength: tvList.length,
     tvList: tvList,
     level: "series",
@@ -200,9 +201,16 @@ class App extends Component {
     //console.log("[App.js] componentDidMount");
 
     for (let i = 0; i < tvListKeys.length; i++) {
-      dataRun(tvListKeys[i], i);      
+      setTimeout(() => {
+        dataRun(tvListKeys[i], i);       
+      }, 25);
+      if (i === tvListKeys.length -1) {
+        console.log("== -- SYSTEM -- ==\n\n\tData Loaded\t\n\tProceed\n\n== -- SYSTEM -- ==");
+        this.setState({
+          dataLoaded: true
+        })
+      }
     }
-    console.log("== -- SYSTEM -- ==\n\n\tData Loaded\t\n\tProceed\n\n== -- SYSTEM -- ==");
 
 
     let localList = tvList;
